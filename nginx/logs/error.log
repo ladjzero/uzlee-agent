@@ -1,0 +1,429 @@
+2016/04/10 12:08:45 [notice] 10096#0: signal process started
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.nio.BufferOverflowException
+	at java.nio.HeapByteBuffer.put(HeapByteBuffer.java:200)
+	at nginx.clojure.java.StringFacedJavaBodyFilter.decodeToString(StringFacedJavaBodyFilter.java:61)
+	at nginx.clojure.java.StringFacedJavaBodyFilter.doFilter(StringFacedJavaBodyFilter.java:34)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:113)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.nio.BufferOverflowException
+	at java.nio.HeapByteBuffer.put(HeapByteBuffer.java:200)
+	at nginx.clojure.java.StringFacedJavaBodyFilter.decodeToString(StringFacedJavaBodyFilter.java:61)
+	at nginx.clojure.java.StringFacedJavaBodyFilter.doFilter(StringFacedJavaBodyFilter.java:34)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:113)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.lang.NullPointerException
+	at nginx.clojure.NginxChainWrappedInputStream.close(NginxChainWrappedInputStream.java:217)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:120)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.lang.NullPointerException
+	at nginx.clojure.NginxChainWrappedInputStream.close(NginxChainWrappedInputStream.java:217)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:120)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.lang.NullPointerException
+	at nginx.clojure.NginxChainWrappedInputStream.close(NginxChainWrappedInputStream.java:217)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:120)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.lang.NullPointerException
+	at nginx.clojure.NginxChainWrappedInputStream.close(NginxChainWrappedInputStream.java:217)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:120)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.lang.NullPointerException
+	at nginx.clojure.NginxChainWrappedInputStream.close(NginxChainWrappedInputStream.java:217)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:120)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.lang.NullPointerException
+	at nginx.clojure.NginxChainWrappedInputStream.close(NginxChainWrappedInputStream.java:217)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:120)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.lang.NullPointerException
+	at nginx.clojure.NginxChainWrappedInputStream.close(NginxChainWrappedInputStream.java:217)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:120)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.lang.NullPointerException
+	at nginx.clojure.NginxChainWrappedInputStream.close(NginxChainWrappedInputStream.java:217)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:120)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.lang.NullPointerException
+	at nginx.clojure.NginxChainWrappedInputStream.close(NginxChainWrappedInputStream.java:217)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:120)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.lang.NullPointerException
+	at nginx.clojure.NginxChainWrappedInputStream.close(NginxChainWrappedInputStream.java:217)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:120)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.lang.NullPointerException
+	at nginx.clojure.NginxChainWrappedInputStream.close(NginxChainWrappedInputStream.java:217)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:120)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.lang.NullPointerException
+	at nginx.clojure.NginxChainWrappedInputStream.close(NginxChainWrappedInputStream.java:217)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:120)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.lang.NullPointerException
+	at nginx.clojure.NginxChainWrappedInputStream.close(NginxChainWrappedInputStream.java:217)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:120)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.lang.NullPointerException
+	at nginx.clojure.NginxChainWrappedInputStream.close(NginxChainWrappedInputStream.java:217)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:120)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.lang.NullPointerException
+	at nginx.clojure.NginxChainWrappedInputStream.close(NginxChainWrappedInputStream.java:217)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:120)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.lang.NullPointerException
+	at nginx.clojure.NginxChainWrappedInputStream.close(NginxChainWrappedInputStream.java:217)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:120)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.lang.NullPointerException
+	at nginx.clojure.NginxChainWrappedInputStream.close(NginxChainWrappedInputStream.java:217)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:120)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.lang.NullPointerException
+	at nginx.clojure.NginxChainWrappedInputStream.close(NginxChainWrappedInputStream.java:217)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:120)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.lang.NullPointerException
+	at nginx.clojure.NginxChainWrappedInputStream.close(NginxChainWrappedInputStream.java:217)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:120)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.lang.NullPointerException
+	at nginx.clojure.NginxChainWrappedInputStream.close(NginxChainWrappedInputStream.java:217)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:120)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.lang.NullPointerException
+	at nginx.clojure.NginxChainWrappedInputStream.close(NginxChainWrappedInputStream.java:217)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:120)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.lang.NullPointerException
+	at nginx.clojure.NginxChainWrappedInputStream.close(NginxChainWrappedInputStream.java:217)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:120)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.lang.NullPointerException
+	at nginx.clojure.NginxChainWrappedInputStream.close(NginxChainWrappedInputStream.java:217)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:120)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.lang.NullPointerException
+	at nginx.clojure.NginxChainWrappedInputStream.close(NginxChainWrappedInputStream.java:217)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:120)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.lang.NullPointerException
+	at nginx.clojure.NginxChainWrappedInputStream.close(NginxChainWrappedInputStream.java:217)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:120)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.lang.NullPointerException
+	at nginx.clojure.NginxChainWrappedInputStream.close(NginxChainWrappedInputStream.java:217)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:120)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.lang.NullPointerException
+	at nginx.clojure.NginxChainWrappedInputStream.close(NginxChainWrappedInputStream.java:217)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:120)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.lang.NullPointerException
+	at nginx.clojure.NginxChainWrappedInputStream.close(NginxChainWrappedInputStream.java:217)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:120)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.lang.NullPointerException
+	at nginx.clojure.NginxChainWrappedInputStream.close(NginxChainWrappedInputStream.java:217)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:120)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.lang.NullPointerException
+	at nginx.clojure.NginxChainWrappedInputStream.close(NginxChainWrappedInputStream.java:217)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:120)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.lang.NullPointerException
+	at nginx.clojure.NginxChainWrappedInputStream.close(NginxChainWrappedInputStream.java:217)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:120)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.lang.NullPointerException
+	at nginx.clojure.NginxChainWrappedInputStream.close(NginxChainWrappedInputStream.java:217)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:120)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.lang.NullPointerException
+	at nginx.clojure.NginxChainWrappedInputStream.close(NginxChainWrappedInputStream.java:217)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:120)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.lang.NullPointerException
+	at nginx.clojure.NginxChainWrappedInputStream.close(NginxChainWrappedInputStream.java:217)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:120)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.lang.NullPointerException
+	at nginx.clojure.NginxChainWrappedInputStream.close(NginxChainWrappedInputStream.java:217)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:120)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.lang.NullPointerException
+	at nginx.clojure.NginxChainWrappedInputStream.close(NginxChainWrappedInputStream.java:217)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:120)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.lang.NullPointerException
+	at nginx.clojure.NginxChainWrappedInputStream.close(NginxChainWrappedInputStream.java:217)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:120)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.lang.NullPointerException
+	at nginx.clojure.NginxChainWrappedInputStream.close(NginxChainWrappedInputStream.java:217)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:120)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.lang.NullPointerException
+	at nginx.clojure.NginxChainWrappedInputStream.close(NginxChainWrappedInputStream.java:217)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:120)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.lang.NullPointerException
+	at nginx.clojure.NginxChainWrappedInputStream.close(NginxChainWrappedInputStream.java:217)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:120)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.lang.NullPointerException
+	at nginx.clojure.NginxChainWrappedInputStream.close(NginxChainWrappedInputStream.java:217)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:120)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.lang.NullPointerException
+	at nginx.clojure.NginxChainWrappedInputStream.close(NginxChainWrappedInputStream.java:217)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:120)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.lang.NullPointerException
+	at nginx.clojure.NginxChainWrappedInputStream.close(NginxChainWrappedInputStream.java:217)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:120)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.lang.NullPointerException
+	at nginx.clojure.NginxChainWrappedInputStream.close(NginxChainWrappedInputStream.java:217)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:120)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.lang.NullPointerException
+	at nginx.clojure.NginxChainWrappedInputStream.close(NginxChainWrappedInputStream.java:217)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:120)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.lang.NullPointerException
+	at nginx.clojure.NginxChainWrappedInputStream.close(NginxChainWrappedInputStream.java:217)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:120)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.lang.NullPointerException
+	at nginx.clojure.NginxChainWrappedInputStream.close(NginxChainWrappedInputStream.java:217)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:120)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.lang.NullPointerException
+	at nginx.clojure.NginxChainWrappedInputStream.close(NginxChainWrappedInputStream.java:217)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:120)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.lang.NullPointerException
+	at nginx.clojure.NginxChainWrappedInputStream.close(NginxChainWrappedInputStream.java:217)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:120)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.lang.NullPointerException
+	at nginx.clojure.NginxChainWrappedInputStream.close(NginxChainWrappedInputStream.java:217)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:120)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.lang.NullPointerException
+	at nginx.clojure.NginxChainWrappedInputStream.close(NginxChainWrappedInputStream.java:217)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:120)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.lang.NullPointerException
+	at nginx.clojure.NginxChainWrappedInputStream.close(NginxChainWrappedInputStream.java:217)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:120)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.lang.NullPointerException
+	at nginx.clojure.NginxChainWrappedInputStream.close(NginxChainWrappedInputStream.java:217)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:120)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.lang.NullPointerException
+	at nginx.clojure.NginxChainWrappedInputStream.close(NginxChainWrappedInputStream.java:217)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:120)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.lang.NullPointerException
+	at nginx.clojure.NginxChainWrappedInputStream.close(NginxChainWrappedInputStream.java:217)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:120)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016-04-10 12:08:55[error][10099][main]server unhandled exception!
+java.nio.BufferOverflowException
+	at java.nio.HeapByteBuffer.put(HeapByteBuffer.java:200)
+	at nginx.clojure.java.StringFacedJavaBodyFilter.decodeToString(StringFacedJavaBodyFilter.java:61)
+	at nginx.clojure.java.StringFacedJavaBodyFilter.doFilter(StringFacedJavaBodyFilter.java:34)
+	at nginx.clojure.java.NginxJavaHandler.process(NginxJavaHandler.java:113)
+	at nginx.clojure.NginxSimpleHandler.handleRequest(NginxSimpleHandler.java:166)
+	at nginx.clojure.NginxSimpleHandler.execute(NginxSimpleHandler.java:97)
+	at nginx.clojure.NginxClojureRT.eval(NginxClojureRT.java:1125)
+2016/04/10 12:08:55 [alert] 10099#0: *1 zero size buf in writer t:1 r:0 f:0 00007FE38B812000 00007FE38B812000-00007FE38B812000 0000000000000000 0-0 while sending to client, client: 127.0.0.1, server: localhost, request: "GET /v1/forum/viewthread.php?tid=1842265&extra=page%3D1 HTTP/1.1", upstream: "http://58.215.45.20:80/forum/viewthread.php?tid=1842265&extra=page%3D1", host: "localhost:8080", referrer: "http://localhost:8080/v1/forum/forumdisplay.php?fid=2"
+2016/04/10 12:10:19 [notice] 10116#0: signal process started
+2016/04/10 12:13:31 [notice] 10137#0: signal process started
+2016/04/10 12:42:06 [emerg] 10243#0: location "/" is outside location "/v1/" in /Users/chenzhuo/Downloads/nginx-clojure-0.4.4/conf/nginx.conf:119
+2016/04/10 12:45:42 [emerg] 10255#0: "proxy_pass" cannot have URI part in location given by regular expression, or inside named location, or inside "if" statement, or inside "limit_except" block in /Users/chenzhuo/Downloads/nginx-clojure-0.4.4/conf/nginx.conf:126
+2016/04/10 12:46:07 [emerg] 10257#0: "proxy_pass" cannot have URI part in location given by regular expression, or inside named location, or inside "if" statement, or inside "limit_except" block in /Users/chenzhuo/Downloads/nginx-clojure-0.4.4/conf/nginx.conf:134
+2016/04/10 12:46:20 [emerg] 10259#0: "proxy_pass" cannot have URI part in location given by regular expression, or inside named location, or inside "if" statement, or inside "limit_except" block in /Users/chenzhuo/Downloads/nginx-clojure-0.4.4/conf/nginx.conf:126
+2016/04/10 12:48:59 [notice] 10266#0: signal process started
+2016/04/10 12:49:26 [error] 10270#0: *1 open() "/Users/chenzhuo/Downloads/nginx-clojure-0.4.4/html/v1" failed (2: No such file or directory), client: 127.0.0.1, server: localhost, request: "GET /v1 HTTP/1.1", host: "localhost:8080"
+2016/04/10 12:50:36 [notice] 10279#0: signal process started
+2016/04/10 12:50:52 [notice] 10284#0: signal process started
+2016/04/10 12:51:07 [notice] 10289#0: signal process started
+2016/04/10 12:55:43 [emerg] 10309#0: "proxy_pass" cannot have URI part in location given by regular expression, or inside named location, or inside "if" statement, or inside "limit_except" block in /Users/chenzhuo/Downloads/nginx-clojure-0.4.4/conf/nginx.conf:126
+2016/04/10 12:56:47 [notice] 10314#0: signal process started
+2016/04/10 12:56:55 [error] 10317#0: *1 open() "/Users/chenzhuo/Downloads/nginx-clojure-0.4.4/html/v1/forum/viewthread.php" failed (2: No such file or directory), client: 127.0.0.1, server: localhost, request: "GET /v1/forum/viewthread.php?tid=1842265&extra=page%3D1 HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/v1/forum/forumdisplay.php?fid=2"
+2016/04/10 17:34:03 [notice] 10451#0: signal process started
