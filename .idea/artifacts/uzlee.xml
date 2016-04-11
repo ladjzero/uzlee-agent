@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="uzlee">
+    <output-path>$PROJECT_DIR$/out/artifacts/uzlee</output-path>
+    <root id="archive" name="uzlee.jar">
+      <element id="module-output" name="uzlee-agent" />
+    </root>
+  </artifact>
+</component>
