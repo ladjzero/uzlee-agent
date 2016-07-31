@@ -7,5 +7,7 @@ public class ResponseData {
     public String formhash;
     public String hash;
     public int unread;
-    public User user;
+    public User currentUser;
+    public boolean success = true;
+    public String errMsg;
 }

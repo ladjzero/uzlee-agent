@@ -48,7 +48,7 @@ public abstract class Parser {
 				int id = Integer.valueOf(uid);
 				String name = eUser.text().trim();
 
-				res.user = new User().setId(id).setName(name);
+				res.currentUser = new User().setId(id).setName(name);
 			}
 		} catch (Error e) {
 //			Logger.e(TAG, e.toString());
