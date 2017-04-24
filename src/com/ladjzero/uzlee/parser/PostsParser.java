@@ -5,29 +5,12 @@ import org.jsoup.nodes.Element;
 import org.jsoup.parser.Tag;
 import org.jsoup.select.Elements;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.Map;
 
 /**
  * Created by chenzhuo on 16-2-11.
  */
 public class PostsParser extends Parser {
-
-	public static class PostsData extends ResponseData {
-		public ArrayList<Post> posts = new ArrayList<>();
-		public String title;
-		public int page;
-		public int totalPage;
-		public boolean hasNextPage;
-		public int fid;
-		private int orderType;
-	}
-
-	public static class PostData extends ResponseData {
-		public Post post = new Post();
-	}
 
 	private static Post toPostObj(Element ePost) {
 		int idPrefixLength = "pid".length();
@@ -60,13 +43,17 @@ public class PostsParser extends Parser {
 				newBody.addAll(otherAttaches);
 			}
 
+			// hipda wraps an a element around image.
+			for (Element a : newBody.select("a[href=javascript:;]")) {
+				a.tagName("span");
+			}
 
 			for (Element img : newBody.select("img")) {
 				String src = img.attr("file");
 
 				if (src.length() == 0) src = img.attr("src");
 
-				if (!src.startsWith("images/smilies/") &&
+				if (!src.contains("images/smilies/") &&
 						!src.endsWith("common/back.gif") &&
 						!src.endsWith("default/attachimg.gif") &&
 						!img.attr("width").equals("16")) {
@@ -82,6 +69,8 @@ public class PostsParser extends Parser {
 
 				if (!src.startsWith("http")) {
 					img.attr("src", "http://www.hi-pda.com/forum/" + src);
+				} else {
+					img.attr("src", src);
 				}
 			}
 
@@ -114,12 +103,18 @@ public class PostsParser extends Parser {
 		String postIndex = ePost.select("a[id^=postnum] > em").text();
 		postIndex = postIndex.trim();
 
-		Element eUinfo = ePost.select("a[href^=space.php?uid=]").get(0);
-		String url = eUinfo.attr("href");
-		String userId = Utils.getUriQueryParameter(url).get("uid");
-		String userName = eUinfo.text();
+		User user = new User().setId(0).setName("");
 
-		User user = new User().setId(Integer.valueOf(userId)).setName(userName);
+		try {
+			Element eUinfo = ePost.select("a[href^=space.php?uid=]").get(0);
+			String url = eUinfo.attr("href");
+			String userId = Utils.getUriQueryParameter(url).get("uid");
+			String userName = eUinfo.text();
+
+			user.setId(Integer.valueOf(userId)).setName(userName);
+		} catch (Exception e) {
+
+		}
 
 		post.setId(Integer.valueOf(id))/*.setNiceBody(niceBody)*/
 				.setAuthor(user).setTimeStr(timeStr).setPostIndex(Integer.valueOf(postIndex));
@@ -161,16 +156,22 @@ public class PostsParser extends Parser {
 		}
 	}
 
-	public static void parseEditablePost(InputStream html, PostData res) throws IOException {
-		Document doc = getDoc(html, res);
+	public Post parseEditablePost(String html) {
+		Document doc = getDoc(html, new Response.Meta());
 		String title = doc.select("#subject").val();
 		String editBody = doc.select("#e_textarea").text();
 
-		res.post.setTitle(title).setBody(editBody);
+		return new Post().setTitle(title).setBody(editBody);
 	}
 
-	public static void parsePosts(InputStream html, PostsData res) throws IOException {
-		Document doc = getDoc(html, res);
+	public Response parse(String html) {
+
+		Posts posts = new Posts();
+		Response.Meta resMeta = new Response.Meta();
+
+		Document doc = getDoc(html, resMeta);
+
+
 
 		Element eFid = doc.select("#nav a").last();
 		String fidStr = eFid.attr("href");
@@ -182,6 +183,8 @@ public class PostsParser extends Parser {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+
+		String title = eFid.nextSibling().toString().replaceAll(" » ", "");
 
 		Elements pages = doc.select("div.pages");
 		int totalPage = 1;
@@ -212,8 +215,7 @@ public class PostsParser extends Parser {
 		int i = 0;
 
 		for (Element ePost : ePosts) {
-			Post post;
-			res.posts.add(post = toPostObj(ePost));
+			posts.add(toPostObj(ePost));
 		}
 
 		int currPage = 1;
@@ -225,16 +227,26 @@ public class PostsParser extends Parser {
 
 		boolean hasNextPage = doc.select("div.pages > a[href$=&page=" + (currPage + 1) + "]").size() > 0;
 
-		res.hasNextPage = hasNextPage;
-		res.page = currPage;
-		res.totalPage = Math.max(totalPage, currPage);
-		res.fid = fid;
-		res.title = doc.title().split(" - ")[0].trim();
+		Posts.Meta meta = posts.getMeta();
+		meta.setHasNextPage(hasNextPage);
+		meta.setPage(currPage);
+		meta.setTotalPage(Math.max(totalPage, currPage));
+		meta.setFid(fid);
+		meta.setTitle(title);
+
+		Response res = new Response();
+		res.setData(posts);
+		res.setMeta(resMeta);
+		res.setSuccess(true);
+
+		return res;
 	}
 
-	public static void parseMentions(InputStream html, PostsData res) {
+	public Posts parseMentions(String html) {
+		Posts mentions = new Posts();
+
 		try {
-			Document doc = getDoc(html, res);
+			Document doc = getDoc(html, new Response.Meta());
 
 			Elements eNotices = doc.select("ul.feed > li.s_clear > div");
 
@@ -278,7 +290,7 @@ public class PostsParser extends Parser {
 						.setTid(Integer.valueOf(tid))
 						.setFid(Integer.valueOf(fid))
 						.setTitle(title).setBody(body);
-				res.posts.add(post);
+				mentions.add(post);
 			}
 
 			int currPage = 1;
@@ -291,15 +303,19 @@ public class PostsParser extends Parser {
 			boolean hasNextPage = doc.select("div.pages > a[href$=&page=" + (currPage + 1) + "]").size() > 0;
 
 			// TO-DO
-			res.hasNextPage = hasNextPage;
-			res.page = currPage;
+			Posts.Meta meta = mentions.getMeta();
+			meta.setHasNextPage(hasNextPage);
+			meta.setPage(currPage);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+
+		return mentions;
 	}
 
-	public static String parseMessagesToHtml(InputStream html, PostsData res) throws IOException {
-		Document doc = getDoc(html, res);
+	public String parseMessagesToHtml(String html) {
+		Posts posts = new Posts();
+		Document doc = getDoc(html, new Response.Meta());
 		Element ePosts = doc.select("#pmlist > .pm_list").first();
 		Elements avatars = ePosts.select("a.avatar > img");
 

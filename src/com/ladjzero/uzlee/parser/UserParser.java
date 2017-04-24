@@ -4,20 +4,14 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import java.io.IOException;
-import java.io.InputStream;
-
 /**
  * Created by chenzhuo on 16-2-12.
  */
 public class UserParser extends Parser {
 
-	public static class UserData extends ResponseData {
-		public User user = new User();
-	}
-
-	public static void parseUser(InputStream html, UserData res) throws IOException {
-		Document doc = getDoc(html, res);
+	public Response parse(String html) {
+		Response.Meta resMeta = new Response.Meta();
+		Document doc = getDoc(html, resMeta);
 
 		String img = doc.select("div.avatar>img").attr("src");
 		String uidLink = doc.select("li.searchpost a").attr("href");
@@ -41,7 +35,7 @@ public class UserParser extends Parser {
 		String totalThreads = eSubProfiles.get(2).text().trim().substring(4);
 		totalThreads = totalThreads.substring(0, totalThreads.indexOf("篇") - 1);
 
-		res.user
+		User user = new User()
 				.setId(Integer.valueOf(uid))
 				.setImage(img)
 				.setName(name)
@@ -51,5 +45,11 @@ public class UserParser extends Parser {
 				.setPoints(point)
 				.setLevel(level)
 				.setTotalThreads(totalThreads);
+
+		Response res = new Response();
+		res.setMeta(resMeta);
+		res.setData(res);
+		res.setSuccess(true);
+		return res;
 	}
 }

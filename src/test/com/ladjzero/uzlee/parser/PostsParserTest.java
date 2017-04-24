@@ -46,17 +46,17 @@ public void testParseEditablePost() throws Exception {
 */ 
 @Test
 public void testParsePosts() throws Exception {
-    PostsParser.PostsData data = new PostsParser.PostsData();
-    PostsParser.parsePosts(new FileInputStream("testRes/发布一个客户端.htm"), data);
-    assertNotNull(data);
-    assertEquals(data.posts.size(), 50);
-    assertEquals(data.fid, 2);
-    assertEquals(data.title, "发布一个客户端");
-    int i = 1;
-    for (Post p : data.posts) {
-        assertEquals(p.getPostIndex(), i++);
-    }
-    assertTrue(data.success);
+//    PostsParser.PostsData data = new PostsParser.PostsData();
+//    PostsParser.parsePosts(new FileInputStream("testRes/发布一个客户端.htm"), data);
+//    assertNotNull(data);
+//    assertEquals(data.posts.size(), 50);
+//    assertEquals(data.fid, 2);
+//    assertEquals(data.title, "发布一个客户端");
+//    int i = 1;
+//    for (Post p : data.posts) {
+//        assertEquals(p.getPostIndex(), i++);
+//    }
+//    assertTrue(data.success);
 }
 
 /** 

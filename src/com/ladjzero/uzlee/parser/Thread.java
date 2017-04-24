@@ -14,6 +14,7 @@ public class Thread {
 	private String title;
 	private String body;
 	private String type;
+	private ArrayList<Post> comments;
 	private int replyTo;
 	private String dateStr;
 	private int fid;
@@ -64,6 +65,15 @@ public class Thread {
 
 	public Thread setType(String type) {
 		this.type = type;
+		return this;
+	}
+
+	public ArrayList<Post> getComments() {
+		return comments;
+	}
+
+	public Thread setComments(ArrayList<Post> comments) {
+		this.comments = comments;
 		return this;
 	}
 

@@ -5,24 +5,27 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 
 /**
  * Created by chenzhuo on 16-2-11.
  */
-public abstract class Parser {
+public abstract class Parser implements Parse {
 	public static final String CODE_GBK = "GBK";
 	public static final String CODE_UTF8 = "UTF-8";
 
 	private static final String STATS = "论坛统计";
 	private String mCode = CODE_GBK;
 
-	public static Document getDoc(InputStream html, ResponseData res) throws IOException {
+	public Document getDoc(String html) {
+		return getDoc(html, new Response.Meta());
+	}
+
+	public Document getDoc(String html, Response.Meta meta) {
 		long time = System.currentTimeMillis();
 
-		Document doc = Jsoup.parse(html, CODE_GBK, "www.hi-pda.com");
+		Document doc = Jsoup.parse(html);
 
 		try {
 			int msgCount = 0;
@@ -38,7 +41,7 @@ public abstract class Parser {
 				}
 			}
 
-			res.unread = msgCount;
+			meta.setUnread(msgCount);
 
 			Elements eUser = doc.select("#umenu > cite > a");
 			String uidHref = eUser.attr("href");
@@ -48,34 +51,34 @@ public abstract class Parser {
 				int id = Integer.valueOf(uid);
 				String name = eUser.text().trim();
 
-				res.currentUser = new User().setId(id).setName(name);
+				meta.setUser(new User().setId(id).setName(name));
+			} else {
+				meta.setUser(new User());
 			}
 		} catch (Error e) {
-//			Logger.e(TAG, e.toString());
 		}
 
 		Elements formHashInput = doc.select("input[name=formhash]");
 
 		if (formHashInput.size() > 0) {
-			res.formhash = formHashInput.val();
+			meta.setFormhash(formHashInput.val());
 		}
 
 		Elements hashInput = doc.select("input[name=hash]");
 
 		if (hashInput.size() > 0) {
-			res.hash = hashInput.val();
+			meta.setHash(hashInput.val());
 		}
 
 		String stats = doc.select("#footlink a[href=stats.php]").text();
 
-//		if (!stats.equals(STATS)) mCode = mCode.equals(CODE_GBK) ? CODE_UTF8 : CODE_GBK;
+		if (!stats.equals(STATS)) mCode = mCode.equals(CODE_GBK) ? CODE_UTF8 : CODE_GBK;
 
-//		Logger.i("%d ms", System.currentTimeMillis() - time);
 		return doc;
 	}
 
-	public static String[] parseExistedAttach(InputStream html, ResponseData data) throws IOException {
-		Document doc = getDoc(html, data);
+	public String[] parseExistedAttach(String html) {
+		Document doc = getDoc(html, new Response.Meta());
 
 		Elements tds = doc.select("td[id^=image_td_]");
 		ArrayList<String> attachIds = new ArrayList<>();
