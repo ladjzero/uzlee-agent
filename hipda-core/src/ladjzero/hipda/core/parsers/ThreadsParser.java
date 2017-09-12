@@ -9,6 +9,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
@@ -24,7 +25,7 @@ public class ThreadsParser extends Parser<Threads> {
 	@Override
 	public Response<Threads> parse(String html) {
 		Response<Threads> res = new Response<>();
-		Threads threads = new Threads();
+		Threads threads = new Threads(new ArrayList<Thread>());
 		Tuple<Document, Response.Meta> tuple = getDoc(html);
 		Document doc = tuple.x;
 		Response.Meta resMeta = tuple.y;
@@ -36,7 +37,7 @@ public class ThreadsParser extends Parser<Threads> {
 
 		for (Element eThread : eThreads) {
 			Thread thread = toThreadObj(eThread);
-			if (thread != null) threads.add(toThreadObj(eThread));
+			if (thread != null) threads.getRecords().add(toThreadObj(eThread));
 		}
 
 		int currPage = 1;
@@ -49,8 +50,8 @@ public class ThreadsParser extends Parser<Threads> {
 
 		Elements nextPage = doc.select("div.pages > a[href$=&page=" + (currPage + 1) + "]");
 
-		threads.getMeta().setHasNextPage(nextPage.size() > 0);
-		threads.getMeta().setPage(currPage);
+		threads.setHasNextPage(nextPage.size() > 0);
+		threads.setPage(currPage);
 
 		res.setData(threads);
 

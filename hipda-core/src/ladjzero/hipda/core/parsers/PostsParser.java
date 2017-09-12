@@ -4,12 +4,14 @@ import ladjzero.hipda.core.entities.Post;
 import ladjzero.hipda.core.entities.Posts;
 import ladjzero.hipda.core.api.Response;
 import ladjzero.hipda.core.entities.User;
+import ladjzero.hipda.core.utils.Logger;
 
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.parser.Tag;
 import org.jsoup.select.Elements;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -180,8 +182,10 @@ public class PostsParser extends Parser<Posts> {
 			String src = img.attr("src");
 
 			try {
+				Logger.info("111 - " + src + " - " + src.split(".thumb.jpg")[0]);
 				img.attr("src", src.split(".thumb.jpg")[0]);
 			} catch (Exception e) {
+				Logger.error(e.toString());
 			}
 		}
 	}
@@ -189,7 +193,7 @@ public class PostsParser extends Parser<Posts> {
 	@Override
 	public Response<Posts> parse(String html) {
 		Response<Posts> res = new Response<>();
-		Posts posts = new Posts();
+		Posts posts = new Posts(new ArrayList<Post>());
 		Tuple<Document, Response.Meta> tuple = getDoc(html);
 		Document doc = tuple.x;
 		Response.Meta resMeta = tuple.y;
@@ -240,7 +244,7 @@ public class PostsParser extends Parser<Posts> {
 		int i = 0;
 
 		for (Element ePost : ePosts) {
-			posts.add(toPostObj(ePost));
+			posts.getRecords().add(toPostObj(ePost));
 		}
 
 		int currPage = 1;
@@ -252,12 +256,11 @@ public class PostsParser extends Parser<Posts> {
 
 		boolean hasNextPage = doc.select("div.pages > a[href$=&page=" + (currPage + 1) + "]").size() > 0;
 
-		Posts.Meta meta = posts.getMeta();
-		meta.setHasNextPage(hasNextPage);
-		meta.setPage(currPage);
-		meta.setTotalPage(Math.max(totalPage, currPage));
-		meta.setFid(fid);
-		meta.setTitle(title);
+		posts.setHasNextPage(hasNextPage);
+		posts.setPage(currPage);
+		posts.setTotalPage(Math.max(totalPage, currPage));
+		posts.setFid(fid);
+		posts.setTitle(title);
 
 		res.setData(posts);
 

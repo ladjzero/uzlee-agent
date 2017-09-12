@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="hipda-nginx:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/hipda_nginx_jar</output-path>
+    <root id="archive" name="hipda-nginx.jar">
+      <element id="module-output" name="hipda-nginx" />
+    </root>
+  </artifact>
+</component>

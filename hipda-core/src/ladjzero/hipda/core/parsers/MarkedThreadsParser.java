@@ -5,15 +5,17 @@ import ladjzero.hipda.core.entities.Thread;
 import ladjzero.hipda.core.entities.Threads;
 
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 /**
  * Created by chenzhuo on 8/29/17.
  */
-public class OwnPostsParser extends Parser<Threads> {
+public class MarkedThreadsParser extends Parser<Threads> {
     @Override
     public Response<Threads> parse(String html) {
         Response<Threads> res = new Response<>();
@@ -22,31 +24,20 @@ public class OwnPostsParser extends Parser<Threads> {
         Response.Meta meta = tuple.y;
         res.setMeta(meta);
 
+        Elements eThreads = doc.select("form[method=post] tbody tr");
+        Threads threads = new Threads(new ArrayList<Thread>());
 
-        Elements eThreads = doc.select("div.threadlist tbody tr");
-        Threads threads = new Threads();
-
-        for (int i = 0; i < eThreads.size(); i += 2) {
-            Elements eTitle = eThreads.get(i).select("th a");
+        for (Element eThread : eThreads) {
+            Elements eTitle = eThread.select("th a");
 
             if (eTitle.size() > 0) {
                 String href = eTitle.attr("href");
-                Map<String, String> params = Utils.getUriQueryParameter(href);
-                String id = params.get("ptid");
-                String pid = params.get("pid");
+                String id = href.substring(href.indexOf("tid=") + 4, href.indexOf("&from"));
                 String title = eTitle.text();
-                String body = eThreads.get(i + 1).select("th.lighttxt").text().trim();
-                String forumStr = eThreads.get(i).select("td.forum > a").attr("href");
+                String forumStr = eThread.select("td.forum > a").attr("href");
                 String fid = Utils.getUriQueryParameter(forumStr).get("fid");
-
-                Thread thread = new Thread()
-                        .setTitle(title)
-                        .setId(Integer.valueOf(id))
-                        .setBody(body)
-                        .setFid(Integer.valueOf(fid))
-                        .setToFind(Integer.valueOf(pid));
-
-                threads.add(thread);
+                Thread thread = new Thread().setTitle(title).setId(Integer.valueOf(id)).setFid(Integer.valueOf(fid));
+                threads.getRecords().add(thread);
             }
         }
 
@@ -58,9 +49,8 @@ public class OwnPostsParser extends Parser<Threads> {
         }
 
         boolean hasNextPage = doc.select("div.pages > a[href$=&page=" + (currPage + 1) + "]").size() > 0;
-
-        threads.getMeta().setPage(currPage);
-        threads.getMeta().setHasNextPage(hasNextPage);
+        threads.setHasNextPage(hasNextPage);
+        threads.setPage(currPage);
 
         res.setData(threads);
         return res;
@@ -69,7 +59,8 @@ public class OwnPostsParser extends Parser<Threads> {
     @Override
     boolean test(List<String> paths, Map<String, String> query) {
         String item = query.get("item");
+        String type = query.get("type");
 
-        return paths.contains("pm.php") && "posts".equals(item);
+        return paths.contains("my.php") && "favorites".equals(item) && "thread".equals(type);
     }
 }

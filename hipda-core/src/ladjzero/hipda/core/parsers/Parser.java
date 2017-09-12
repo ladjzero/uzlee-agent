@@ -1,6 +1,7 @@
 package ladjzero.hipda.core.parsers;
 
 import ladjzero.hipda.core.api.Response;
+import ladjzero.hipda.core.utils.Logger;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -69,6 +70,7 @@ public abstract class Parser<T> implements Parsable<T>, ParserMatcher {
 				meta.setUserName(null);
 			}
 		} catch (Error e) {
+			Logger.error("Parser" + e.toString());
 		}
 
 		Elements formHashInput = doc.select("input[name=formhash]");

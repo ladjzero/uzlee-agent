@@ -1,13 +1,14 @@
 package ladjzero.hipda.core.parsers;
 
 import ladjzero.hipda.core.api.Response;
-import ladjzero.hipda.core.entities.Threads;
 import ladjzero.hipda.core.entities.Thread;
+import ladjzero.hipda.core.entities.Threads;
 
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -24,7 +25,7 @@ public class OwnThreadsParser extends Parser<Threads> {
         res.setMeta(meta);
 
         Elements eThreads = doc.select("div.threadlist tbody tr");
-        Threads threads = new Threads();
+        Threads threads = new Threads(new ArrayList<Thread>());
 
         for (Element eThread : eThreads) {
             Elements eTitle = eThread.select("th a");
@@ -43,7 +44,7 @@ public class OwnThreadsParser extends Parser<Threads> {
                 if (fid != null) {
                     thread.setFid(Integer.valueOf(fid));
                 }
-                threads.add(thread);
+                threads.getRecords().add(thread);
             }
         }
 
@@ -55,8 +56,8 @@ public class OwnThreadsParser extends Parser<Threads> {
         }
 
         boolean hasNextPage = doc.select("div.pages > a[href$=&page=" + (currPage + 1) + "]").size() > 0;
-        threads.getMeta().setHasNextPage(hasNextPage);
-        threads.getMeta().setPage(currPage);
+        threads.setHasNextPage(hasNextPage);
+        threads.setPage(currPage);
 
         res.setData(threads);
 

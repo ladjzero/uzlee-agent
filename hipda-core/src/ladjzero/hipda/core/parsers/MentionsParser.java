@@ -8,6 +8,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -18,7 +19,7 @@ public class MentionsParser extends Parser<Posts> {
     @Override
     public Response<Posts> parse(String html) {
         Response<Posts> res = new Response<>();
-        Posts mentions = new Posts();
+        Posts mentions = new Posts(new ArrayList<Post>());
 
         try {
             Tuple<Document, Response.Meta> tuple = getDoc(html);
@@ -67,7 +68,7 @@ public class MentionsParser extends Parser<Posts> {
                         .setTid(Integer.valueOf(tid))
                         .setFid(Integer.valueOf(fid))
                         .setTitle(title).setBody(body);
-                mentions.add(post);
+                mentions.getRecords().add(post);
             }
 
             int currPage = 1;
@@ -80,9 +81,8 @@ public class MentionsParser extends Parser<Posts> {
             boolean hasNextPage = doc.select("div.pages > a[href$=&page=" + (currPage + 1) + "]").size() > 0;
 
             // TO-DO
-            Posts.Meta meta = mentions.getMeta();
-            meta.setHasNextPage(hasNextPage);
-            meta.setPage(currPage);
+            mentions.setHasNextPage(hasNextPage);
+            mentions.setPage(currPage);
         } catch (Exception e) {
             e.printStackTrace();
         }

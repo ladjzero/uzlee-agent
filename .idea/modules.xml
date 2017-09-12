@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/uzlee-agent.iml" filepath="$PROJECT_DIR$/.idea/uzlee-agent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hipda-core/hipda-core.iml" filepath="$PROJECT_DIR$/hipda-core/hipda-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hipda-nginx/hipda-nginx.iml" filepath="$PROJECT_DIR$/hipda-nginx/hipda-nginx.iml" />
     </modules>
   </component>
 </project>

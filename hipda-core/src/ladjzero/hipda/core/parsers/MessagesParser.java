@@ -10,6 +10,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.nodes.TextNode;
 import org.jsoup.select.Elements;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -26,7 +27,7 @@ public class MessagesParser extends Parser<Threads> {
         res.setMeta(meta);
 
         Elements pms = doc.select("ul.pm_list li.s_clear");
-        Threads threads = new Threads();
+        Threads threads = new Threads(new ArrayList<Thread>());
 
         for (Element pm : pms) {
             try {
@@ -42,7 +43,7 @@ public class MessagesParser extends Parser<Threads> {
                 String dateStr = ((TextNode) pm.select("p.cite").get(0).childNode(2)).text().replaceAll("\u00a0", "");
 
                 Thread thread = new Thread().setTitle(title).setAuthor(u).setNew(isNew).setDateStr(dateStr);
-                threads.add(thread);
+                threads.getRecords().add(thread);
             } catch (Exception e) {
                 e.printStackTrace();
 //				Logger.e("Can not parse user in PMs, pm: %s", pm.html());
@@ -57,8 +58,8 @@ public class MessagesParser extends Parser<Threads> {
         }
 
         boolean hasNextPage = doc.select("div.pages > a[href$=&page=" + (currPage + 1) + "]").size() > 0;
-        threads.getMeta().setHasNextPage(hasNextPage);
-        threads.getMeta().setPage(currPage);
+        threads.setHasNextPage(hasNextPage);
+        threads.setPage(currPage);
 
         res.setData(threads);
 
